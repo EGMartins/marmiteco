@@ -23,6 +23,10 @@ gem 'coffee-rails', '~> 4.2'
 # gem 'therubyracer', platforms: :ruby
 # Gem for use of geolocation
 gem 'geocoder', '~> 1.4', '>= 1.4.4'
+# Using google maps
+gem 'gmaps4rails'
+# PAssing data to JS
+gem 'gon', '~> 6.1'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
@@ -33,8 +37,10 @@ gem 'jbuilder', '~> 2.5'
 # Gem to style the app follow the Material Design
 # gem 'redis', '~> 3.0'
 gem 'material_icons'
-gem 'materialize-sass', '~> 0.98.2'
+gem 'materialize-sass'
+
 gem 'responders'
+gem 'underscore-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

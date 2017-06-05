@@ -1,4 +1,4 @@
-class UsersController < LoggedController
+class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit update destroy]
   respond_to :html, :json
 
@@ -20,8 +20,9 @@ class UsersController < LoggedController
 
   def create
     @user = User.new(user_params)
-    flash[:notice] = 'Usuário Criado!' if @user.save
-    respond_with @user
+    flash[:notice] = 'Usuário Criado! Agora acesse sua conta!' if @user.save
+    
+    redirect_to new_session_path
   end
 
   def update

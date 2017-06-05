@@ -1,4 +1,4 @@
-class BusinessesController < LoggedController
+class BusinessesController < ApplicationController
   before_action :set_business, only: %i[show edit update destroy]
   respond_to :html, :json
 
