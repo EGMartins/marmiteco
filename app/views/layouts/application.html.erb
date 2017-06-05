@@ -10,10 +10,11 @@
 
   <body>
     <ul id="dropdown1" class="dropdown-content">
-      <li><%= link_to 'Entrar', new_session_path %></li>
       <% if session[:id].present? %>
+        <li><%= link_to'Meu Negócio','' %></li>
         <li><%= link_to('Sair', session_path(1), method: :delete) %></li>
       <% else %>
+        <li><%= link_to 'Entrar', new_session_path %></li>
         <li><%= link_to 'Cadastrar', new_user_path %></li>
       <% end %>
 
