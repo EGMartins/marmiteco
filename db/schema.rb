@@ -10,7 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170604181252) do
+ActiveRecord::Schema.define(version: 20170605014351) do
+
+  create_table "businesses", force: :cascade do |t|
+    t.string   "business_name",     limit: 150, null: false
+    t.text     "business_info",     limit: 450, null: false
+    t.string   "business_time",     limit: 150, null: false
+    t.string   "business_street",   limit: 150, null: false
+    t.string   "business_number",   limit: 30,  null: false
+    t.string   "business_neighbor", limit: 50,  null: false
+    t.string   "business_city",     limit: 100, null: false
+    t.string   "business_state",    limit: 2,   null: false
+    t.float    "latitude"
+    t.float    "longitude"
+    t.integer  "user_id"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.index ["user_id"], name: "index_businesses_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "name",            limit: 100, null: false

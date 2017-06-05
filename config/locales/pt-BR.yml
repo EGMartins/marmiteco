@@ -3,12 +3,23 @@ pt-BR:
   activerecord:
     models:
       user: 'Usuário'
+      business: 'Negócio'
     attributes:
       user:
         name: 'Nome'
         email: 'E-mail'
         password: 'Senha'
         confirmation_password: 'Confirme a Senha'
+      business:
+        business_name: 'Nome do meu negócio'
+        business_info: 'Descreva seu negócio'
+        business_time: 'Horário de atendimento'
+        business_street: 'Rua'
+        business_number: 'Número'
+        business_neighbor: 'Bairro'
+        business_city: 'Cidade'
+        business_state: 'Estado'
+        
     errors:
       messages:
         record_invalid: 'A validação falhou: %{errors}'

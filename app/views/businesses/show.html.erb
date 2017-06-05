@@ -1,0 +1,51 @@
+<div class="container">
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <strong>Meu negócio:</strong>
+    <%= @business.business_name %>
+  </p>
+
+  <p>
+    <strong>O que oferecemos:</strong>
+    <%= @business.business_info %>
+  </p>
+
+  <p>
+    <strong>Horário de atendimento:</strong>
+    <%= @business.business_time %>
+  </p>
+
+  <p>
+    <strong>Rua:</strong>
+    <%= @business.business_street %>
+  </p>
+
+  <p>
+    <strong>Número:</strong>
+    <%= @business.business_number %>
+  </p>
+
+  <p>
+    <strong>Bairro:</strong>
+    <%= @business.business_neighbor %>
+  </p>
+
+  <p>
+    <strong>Cidade:</strong>
+    <%= @business.business_city %>
+  </p>
+
+  <p>
+    <strong>Estado:</strong>
+    <%= @business.business_state %>
+  </p>
+
+  <p>
+    <strong>Responsável:</strong>
+    <%= @business.user.name %>
+  </p>
+
+  <%= link_to 'Editar', edit_business_path(@business) %> |
+  <%= link_to 'Voltar', businesses_path %>
+</div>
