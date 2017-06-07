@@ -8,6 +8,7 @@ class HomeController < ApplicationController
     @hash = Gmaps4rails.build_markers(@businesses) do |business, marker|
       marker.lat business.latitude
       marker.lng business.longitude
+      marker.picture({ url: ActionController::Base.helpers.asset_path("restaurant.png"), width: 32, height: 32 })
       marker.infowindow business.business_info
     end
   end

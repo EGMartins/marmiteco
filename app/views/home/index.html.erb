@@ -5,11 +5,17 @@
 <div class="container">
   <section id="search">
     <%= form_tag root_path, :method => :get do %>
-  <p>
-    <%= label :search, 'Coloque seu endereço' %>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Por perto", :name => nil %>
-  </p>
+  <div class="row">
+    <div class="col s10">
+      <%= label :search, 'Coloque seu endereço' %>
+      <%= text_field_tag :search, params[:search] %>
+    </div>
+    <div class="col s2 valign">
+        <%= submit_tag "Por perto", :name => nil, class: "waves-effect waves-light btn" %>
+    </div>
+  </div>
+
+
 <% end %>
   </section>
 </div>
