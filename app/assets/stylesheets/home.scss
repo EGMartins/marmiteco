@@ -23,3 +23,20 @@
 .valign {
   margin-top: 22px;
 }
+
+#iw-container {
+  margin: 0;
+  padding: 10px;
+  background-color: rgba(255,204,142,0.25);
+}
+
+#iw-container  .iw-title {
+   font-family: 'Open Sans Condensed', sans-serif;
+   font-size: 22px;
+   font-weight: 400;
+   padding: 10px;
+   background-color: #FB8C00;
+   color: white;
+   margin: 1px;
+   border-radius: 2px 2px 0 0; /* De acordo com o arredondamento dos cantos da infowindow por padrão. */
+}

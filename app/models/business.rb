@@ -1,8 +1,7 @@
 class Business < ApplicationRecord
 
   geocoded_by :address
-  after_validation :geocode,
-                   :if => lambda{ |obj| obj.address_changed? }
+  after_validation :geocode
   belongs_to :user
 
   validates :business_name, presence: true, length: { maximum: 150 }
@@ -13,6 +12,7 @@ class Business < ApplicationRecord
   validates :business_neighbor, presence: true, length: { maximum: 50 }
   validates :business_city, presence: true, length: { maximum: 100 }
   validates :business_state, presence: true, length: { maximum: 2 }
+  validates :business_phone, presence: true
 
 
 
