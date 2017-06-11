@@ -17,4 +17,9 @@
  @import "materialize";
  @import "materialize/extras/nouislider";
  @import "material_icons";
- @import "home"
+ @import "animate";
+ @import "home";
+
+ body {
+   background-color: #fff3e0;
+ }

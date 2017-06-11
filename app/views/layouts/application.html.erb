@@ -27,13 +27,13 @@
 
     <nav>
        <div class="nav-wrapper">
-         <a href="#" class="brand-logo"><%= image_tag 'small_logo.png' %></a>
+         <%= link_to (image_tag 'small_logo.png'), root_path, { :"data-turbolinks" => false, class: "brand-logo" } %>
          <ul id="nav-mobile" class="right hide-on-med-and-down">
            <% if session[:id].present? %>
               <li><h4>Olá, <%= current_user.name %>!</h4></li>
               <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Usuário<i class="material-icons right">arrow_drop_down</i></a></li>
           <% else %>
-              <li><%= link_to 'Home', root_path %></li>
+              <li><%= link_to 'Home', root_path, :"data-turbolinks" => false %></li>
               <li><a href="#">Sobre nós</a></li>
               <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Usuário<i class="material-icons right">arrow_drop_down</i></a></li>
            <% end %>
@@ -41,23 +41,7 @@
        </div>
      </nav>
      <br>
-     <% unless session[:id].present? %>
-       <div class="container">
-         <section id="search">
-           <%= form_tag map_path, :method => :get do %>
-         <div class="row">
-           <div class="col s10">
-             <%= label :search, 'Coloque seu endereço' %>
-             <%= text_field_tag :search, params[:search] %>
-           </div>
-           <div class="col s2 valign">
-               <%= submit_tag "Por perto", :name => nil, class: "waves-effect waves-light btn" %>
-           </div>
-         </div>
-       <% end %>
-         </section>
-       </div>
-    <% end %>
+     
     <%= yield %>
   </body>
 </html>

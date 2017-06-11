@@ -2,6 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.parallax-container {
+  height: 600px;
+  border-bottom: solid 6px #FB8C00;
+  .caption {
+    h1 {
+      color: #FB8C00;
+      padding: 30px;
+      -webkit-text-stroke: 1px gray;
+    }
+  }
+}
+
+.parallax img {
+  display: block;
+}
+
 .nav-wrapper {
   background-color: #fb8c00 !important;
 }

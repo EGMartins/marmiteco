@@ -1,10 +1,11 @@
 class HomeController < ApplicationController
+
   def map
     if params[:search].present?
       @businesses = Business.near(params[:search], 2, units: :km)
     else
       # @businesses = Business.near('Praça da Matriz, Mirassol', 2, units: :km)
-      redirect_to home_path
+      redirect_to root_path
     end
     @hash = Gmaps4rails.build_markers(@businesses) do |business, marker|
       marker.lat business.latitude
