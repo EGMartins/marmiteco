@@ -9,7 +9,7 @@ class Business < ApplicationRecord
   validates :business_time, presence: true, length: { maximum: 150 }
   validates :business_street, presence: true, length: { maximum: 150 }
   validates :business_number, presence: true, length: { maximum: 30 }
-  validates :business_neighbor, presence: true, length: { maximum: 50 }
+ validates :business_neighbor, presence: true, length: { maximum: 50 }
   validates :business_city, presence: true, length: { maximum: 100 }
   validates :business_state, presence: true, length: { maximum: 2 }
   validates :business_phone, presence: true

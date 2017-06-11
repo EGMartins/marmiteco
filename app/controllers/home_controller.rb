@@ -1,10 +1,10 @@
 class HomeController < ApplicationController
-  def index
+  def map
     if params[:search].present?
       @businesses = Business.near(params[:search], 2, units: :km)
     else
       # @businesses = Business.near('Praça da Matriz, Mirassol', 2, units: :km)
-      redirect_to about_path
+      redirect_to home_path
     end
     @hash = Gmaps4rails.build_markers(@businesses) do |business, marker|
       marker.lat business.latitude
@@ -24,7 +24,7 @@ class HomeController < ApplicationController
     "<div id=\"iw-container\"><div class=\"iw-title\">#{business.business_name}</div> <br><br> <em>#{business.business_info}</em> <hr> <p>Funcionamento: #{business.business_time} </p> <hr> <p>Telefone: #{business.business_phone} </p> <hr> <p>#{business.address}</p></div>"
   end
 
-  def about
+  def home
 
   end
 end
