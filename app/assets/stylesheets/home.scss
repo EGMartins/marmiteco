@@ -2,6 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.session-container {
+  width: 600px;
+  background-color: #fcc480;
+  padding: 30px;
+  margin: 0 auto;
+  margin-top: 60px;
+}
+
 .map-container  {
   border-top: solid 6px #FB8C00;
 }

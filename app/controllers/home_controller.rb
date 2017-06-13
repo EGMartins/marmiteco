@@ -3,6 +3,7 @@ class HomeController < ApplicationController
   def map
     if params[:search].present?
       @businesses = Business.near(params[:search], 2, units: :km)
+      # render :json => @businesses
     else
       # @businesses = Business.near('Praça da Matriz, Mirassol', 2, units: :km)
       redirect_to root_path
@@ -15,6 +16,12 @@ class HomeController < ApplicationController
       marker.infowindow gmaps4rails_infowindow(business)
       # marker.infowindow "#{business.business_name} \n #{business.business_info}"
     end
+
+  end
+
+  def json_map
+    @businesses = Business.near(params[:search], 2, units: :km)
+    render :json => @businesses
   end
 
   def gmaps4rails_title(business)
