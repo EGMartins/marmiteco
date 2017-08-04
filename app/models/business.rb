@@ -1,7 +1,9 @@
 class Business < ApplicationRecord
 
   geocoded_by :address
-  after_validation :geocode
+  reverse_geocoded_by :latitude, :longitude
+  after_validation :geocode, :reverse_geocode
+  
   belongs_to :user
 
   validates :business_name, presence: true, length: { maximum: 150 }

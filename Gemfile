@@ -36,6 +36,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # Gem to style the app follow the Material Design
 # gem 'redis', '~> 3.0'
+gem 'rack-cors'
 gem 'material_icons'
 gem 'materialize-sass'
 
