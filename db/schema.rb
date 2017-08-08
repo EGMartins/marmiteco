@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170805170821) do
+ActiveRecord::Schema.define(version: 20170808233600) do
 
   create_table "businesses", force: :cascade do |t|
     t.string   "business_name",     limit: 150, null: false
@@ -28,6 +28,13 @@ ActiveRecord::Schema.define(version: 20170805170821) do
     t.datetime "updated_at",                    null: false
     t.string   "business_phone"
     t.string   "address"
+    t.string   "sunday"
+    t.string   "monday"
+    t.string   "tuesday"
+    t.string   "wednesday"
+    t.string   "thursday"
+    t.string   "friday"
+    t.string   "saturday"
     t.index ["user_id"], name: "index_businesses_on_user_id"
   end
 

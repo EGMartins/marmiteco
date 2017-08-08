@@ -11,6 +11,8 @@
     </div>
   <% end %>
 
+<h3>Dados Cadastrais:</h3>
+
   <div class="field">
     <%= f.label :business_name %>
     <%= f.text_field :business_name %>
@@ -31,6 +33,39 @@
     <%= f.text_field :business_time %>
   </div>
 
+<h3>Cardápio da Semana</h3>
+
+  <div class="field">
+    <%= f.label :monday, 'Segunda' %>
+    <%= f.text_field :monday %>
+  </div>
+  <div class="field">
+    <%= f.label :tuesday, 'Terça' %>
+    <%= f.text_field :tuesday %>
+  </div>
+  <div class="field">
+    <%= f.label :wednesday, 'Quarta' %>
+    <%= f.text_field :wednesday %>
+  </div>
+  <div class="field">
+    <%= f.label :thursday, 'Quinta' %>
+    <%= f.text_field :thursday %>
+  </div>
+  <div class="field">
+    <%= f.label :friday, 'Sexta' %>
+    <%= f.text_field :friday %>
+  </div>
+  <div class="field">
+    <%= f.label :saturday, 'Sábado' %>
+    <%= f.text_field :saturday %>
+  </div>
+  <div class="field">
+    <%= f.label :sunday, 'Domingo' %>
+    <%= f.text_field :sunday %>
+  </div>
+
+
+<h3>Localização:</h3>
   <div class="field">
     <%= f.label :business_street %>
     <%= f.text_field :business_street %>
@@ -58,6 +93,6 @@
 
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Salvar', class: 'btn btn-primary' %>
   </div>
 <% end %>
