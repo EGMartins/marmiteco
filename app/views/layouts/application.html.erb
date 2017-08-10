@@ -12,12 +12,6 @@
   <body>
     <ul id="dropdown1" class="dropdown-content">
       <% if session[:id].present? %>
-        <li><%= link_to 'Editar Meu Perfil', edit_user_path(current_user) %></li>
-        <% if current_user.business.present? %>
-          <li><%= link_to 'Editar Meu Negócio', edit_business_path(current_user.business.id) %></li>
-        <% else %>
-          <li><%= link_to'Criar Meu Negócio', new_business_path %></li>
-        <% end %>
         <li><%= link_to('Sair', session_path(1), method: :delete) %></li>
       <% else %>
         <li><%= link_to 'Entrar', new_session_path %></li>
