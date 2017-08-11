@@ -54,6 +54,8 @@ GEM
     erubis (2.7.0)
     execjs (2.7.0)
     ffi (1.9.18)
+    figaro (1.1.1)
+      thor (~> 0.14)
     geocoder (1.4.4)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
@@ -177,6 +179,7 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   byebug
   coffee-rails (~> 4.2)
+  figaro (~> 1.1, >= 1.1.1)
   geocoder (~> 1.4, >= 1.4.4)
   gmaps4rails
   gon (~> 6.1)

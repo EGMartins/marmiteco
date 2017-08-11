@@ -21,5 +21,9 @@ test:
   database: db/test.sqlite3
 
 production:
-  <<: *default
-  database: db/production.sqlite3
+  adapter: postgresql
+  3 encoding: utf8
+  4 database: marmiteco
+  5 host: localhost
+  6 username: ENV['DATA_USER']
+  7 password: ENV['DATA_PWD']
