@@ -1,0 +1,34 @@
+# Default configuration---
+directory: /home/ffwdesign/marmiteco/
+user: ffwdesign
+list:
+- Rakefile
+- config.ru
+- Gemfile
+- - config/application.rb
+- - config/environment.rb
+- - config/initializers/**/*
+- - config/environments/production.rb
+- - config/locales/**/*
+- - config/routes.rb
+- - config/boot.rb
+- - config/database.yml
+- - config/secrets.yml
+- - app/**/*
+- - db/migrate/**/*
+- - db/seeds.rb
+- - public/404.html
+- - public/422.html
+- - public/500.html
+- - public/favicon.ico
+- - public/robots.txt
+- - public/javascripts/**/*
+- - public/stylesheets/**/*
+- - lib/**/*
+- - bin/**/*
+- - public/images/**/*
+  - public/images/uploads/**/*
+password: ENV['DATA_PWD']
+host: 139.162.240.174
+server: passenger
+shell: bash -l -c
