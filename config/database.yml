@@ -22,8 +22,8 @@ test:
 
 production:
   adapter: postgresql
-  3 encoding: utf8
-  4 database: marmiteco
-  5 host: localhost
-  6 username: ENV['DATA_USER']
-  7 password: ENV['DATA_PWD']
+  encoding: utf8
+  database: marmiteco
+  host: localhost
+  username: ENV['DATA_USER']
+  password: ENV['DATA_PWD']
