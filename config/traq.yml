@@ -28,7 +28,6 @@ list:
 - - bin/**/*
 - - public/images/**/*
   - public/images/uploads/**/*
-password: Lucim4r4!@#
 host: 139.162.240.174
 server: passenger
 shell: bash -l -c
