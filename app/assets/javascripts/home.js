@@ -3,6 +3,11 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
+	$(".button-collapse").sideNav();
+});
+
+
+$(document).ready(function(){
  
   // hide our element on page load
   $('#section01').css('opacity', 0);
