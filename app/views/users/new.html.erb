@@ -1,7 +1,11 @@
 <div class="container">
-  <h1>Novo Usuário</h1>
+	<div class="animated fadeInRight">
+	  <h1>Cadastro</h1>
+	  <h4>Que bom que está aqui! Vem com a gente!</h4>
+	  <br>
+		
+	  <%= render 'form', user: @user %>
 
-  <%= render 'form', user: @user %>
-
-  <%= link_to 'Voltar', users_path %>
+	  <%= link_to 'Voltar', users_path, class: 'btn btn-default' %>
+	</div>
 </div>

@@ -21,7 +21,10 @@
     h1 {
       color: #FB8C00;
       padding: 30px;
-      -webkit-text-stroke: 1px gray;
+      -webkit-text-stroke: 2px black;
+    }
+    h3 {
+      color: #e2e2e2 !important;
     }
   }
 }
@@ -48,6 +51,27 @@
   }
 }
 
+.section01 {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding-bottom: 30px
+}
+
+.section02 {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+
+
+.wraper01 {
+  margin: 30px;
+  margin-left: 10px;
+  padding: 10px;
+}
+
 .valign {
   margin-top: 22px;
 }
@@ -67,4 +91,8 @@
    color: white;
    margin: 1px;
    border-radius: 2px 2px 0 0; /* De acordo com o arredondamento dos cantos da infowindow por padrão. */
+}
+
+.page-footer {
+  background-color: #BD500D
 }
