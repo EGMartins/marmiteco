@@ -3,12 +3,12 @@
     <section id="search">
       <%= form_tag map_path, :method => :get do %>
     <div class="row">
-      <div class="input-field col s10">
+      <div class="input-field col s12">
         <i class="material-icons prefix">location_on</i>
         <%= label :search, 'Coloque um endereço para encontrar comida' %>
         <%= text_field_tag :search, params[:search] %>
       </div>
-      <div class="col s2 valign">
+      <div class="col s12 valign">
           <%= submit_tag "Por perto", :name => nil, class: "waves-effect waves-orange btn" %>
       </div>
     </div>
