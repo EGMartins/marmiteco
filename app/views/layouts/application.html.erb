@@ -20,10 +20,14 @@
           
           
       </div></li>
-      <li><%= link_to 'Entrar', new_session_path, class: "waves-effect" %></li>
-      <li><div class="divider"></div></li>
-      <li><%= link_to 'Cadastrar', new_user_path, class: "waves-effect" %></li>
-      
+      <% if session[:id].present? %>
+        <li><%= link_to('Sair', session_path(1), method: :delete) %></li>
+      <% else %>
+        <li><%= link_to 'Entrar', new_session_path %></li>
+        <li><div class="divider"></div></li>
+        <li><%= link_to 'Cadastrar', new_user_path %></li>
+      <% end %>
+
     </ul>
     <a href="#" data-activates="slide-out" class="button-collapse hide-on-med-and-up"><i class="material-icons">menu</i></a>
         

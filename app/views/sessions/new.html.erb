@@ -3,7 +3,8 @@
         <div class="col m10 offset-m1 s12">
             <h2 class="center-align">Vamos entrar?</h2>
             <div class="row">
-                <form class="col m8 offset-m2 s12">
+                <!-- <form class="col m8 offset-m2 s12"> -->
+                <%= form_tag sessions_path, :html => { class: 'col m8 offset-m2 s12'} do %>   
                     <div class="row">
                         <div class="input-field col s12">
                             <%= label_tag :email, 'E-mail:' %>
@@ -21,7 +22,8 @@
                          <p><%= submit_tag 'Entrar', class: "btn btn-large waves-effect waves-light" %></p>
                         </div>
                     </div>
-                </form>
+                <!-- </form> -->
+                <% end %>
             </div>
         </div>
     </div>

@@ -1,7 +1,8 @@
 <div class="container">
-  <h1>Editing User</h1>
+  <h3>Edite seu cadastro</h3>
   <%= render 'form', user: @user %>
+	<br>
 
-  <%= link_to 'Ver', @user %> |
-  <%= link_to 'Voltar', users_path %>
+  <%= link_to 'Voltar', users_path, class: 'btn btn-primary' %>
+
 </div>
