@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  post 'notification', to: 'notification#create'
+
+  get 'order/new'
+
+  post 'order/create'
+
+  get 'order/index'
+
+  resources :products
   resources :businesses
   root 'home#home'
   get 'map' => 'home#map', as: 'map'

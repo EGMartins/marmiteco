@@ -1,7 +1,7 @@
 <div class="container card-wrapper">
 
   <div class="row">
-    <div class="col s12 m6">
+    <div class="col s12 m4">
       <div class="card">
         <div class="card-image">
           <%= image_tag("profile_icon.svg", :alt => "Meu perfil") %>
@@ -17,7 +17,7 @@
       </div>
     </div>
 
-    <div class="col s12 m6">
+    <div class="col s12 m4">
       <div class="card">
         <div class="card-image">
           <%= image_tag("business_icon.svg", :alt => "Meu negocio") %>
@@ -38,4 +38,27 @@
     </div>
   </div>
 
+
+    <div class="row">
+    <div class="col s12 m4">
+      <div class="card">
+        <div class="card-image">
+          <%= image_tag("profile_icon.svg", :alt => "Meu perfil") %>
+          <span class="card-title">Pagamentos</span>
+        </div>
+        <div class="card-content">
+          <p>Aqui é onde você realiza pagamentos e controle os pagamentos já realizados!</p>
+        </div>
+        <div class="card-action">
+          <%= link_to 'Comprar Produto', order_new_path(product_id: '1'), class: 'btn btn-primary' %>
+        </div>
+      </div>
+    </div>
+
 </div>
+
+
+
+
+
+
