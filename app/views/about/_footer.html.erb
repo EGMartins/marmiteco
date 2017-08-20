@@ -1,0 +1,23 @@
+<footer class="page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <%= link_to (image_tag 'small_logo.png', class: 'responsive-img'), root_path %>          
+          <p class="grey-text text-lighten-4 slogan">A maneira de fácil de encontrar comida.</p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">Vem com a gente!</h5>
+          <ul>
+            <li><%= link_to 'Entrar', new_session_path, class: "grey-text text-lighten-3" %></li>
+            <li><%= link_to 'Cadastrar', new_user_path, class: "grey-text text-lighten-3" %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container center">
+      © 2017 Copyright by FFW Design | Mirassol | SP
+      <!-- <a class="grey-text text-lighten-4 right" href="#!">More Links</a> -->
+      </div>
+    </div>
+  </footer>

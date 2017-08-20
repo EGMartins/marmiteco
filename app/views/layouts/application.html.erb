@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <script type="text/javascript" src="https://stc.sandbox.pagseguro.uol.com.br/pagseguro/api/v2/checkout/pagseguro.directpayment.js"></script>
+    
 
   </head>
 
@@ -28,6 +28,8 @@
         <li><%= link_to 'Entrar', new_session_path %></li>
         <li><div class="divider"></div></li>
         <li><%= link_to 'Cadastrar', new_user_path %></li>
+        <li><div class="divider"></div></li>
+        <li><%= link_to 'Como Funciona?', about_index_path %></li>
       <% end %>
 
     </ul>
@@ -42,7 +44,7 @@
               <li><li><%= link_to('Sair', session_path(1), method: :delete) %></li></li>
           <% else %>
               <li><%= link_to 'Marmiteco', root_path, :"data-turbolinks" => false %></li>
-              <li><%= link_to 'Como funciona?', '#' %></li>
+              <li><%= link_to 'Como funciona?', about_index_path, :"data-turbolinks" => false %></li>
               <li><%= link_to 'Entrar', new_session_path %></li>
               <li><%= link_to 'Cadastrar', new_user_path %></li>
            <% end %>

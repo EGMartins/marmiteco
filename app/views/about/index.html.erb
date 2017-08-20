@@ -1,0 +1,71 @@
+<div class="container">
+	<div class="row animated" id="about01">
+		<div class="my-about">
+			<h3 class="center-align">O que é Marmiteco?</h3>
+			<h5 class="center-align">
+				Marmiteco é uma plataforma web e mobile para encontrar e oferecer comida. Se você vende comida, este é o lugar para divulgar seu restaurante. Se você tem fome, este é o lugar para encontrar onde comer!
+			</h5>
+		</div>
+	</div>
+		
+		<hr>
+
+		<div class="row businessman">
+			<div class="col s12 m8 animated" id="about02">
+				<h3>Para quem mata a fome!</h3>
+				<p>
+					Para você empresário do ramo da alimentação, Marmiteco é uma ferramenta para divulgação do seu restaurante. Como isso funciona? É simples! Basta que você faça o cadastro no site, realizando o pagamento de um valor mensal, e pronto, seu negócio já está disponível para ser encontrado pelo aplicativo e pelo próprio site. <br>
+					O site funciona como uma plataforma de gestão, onde você realiza seus pagamentos, cadastra seu negócio, preenche informações como horário de atendimento, menu da semana, etc. Toda essa informação já fica disponível para os usuários do aplicativo e do sistema.
+					<a href="#price">Mas quanto isso me custa?</a>
+				</p>
+			</div>
+			<div class="col s12 m4 animated" id="about03">
+				<%= image_tag 'empresario.svg', class: 'responsive-img' %>
+			</div>	
+		</div>
+		
+		<div class="row">
+			<div class="col s12 m4 animated" id="about04">
+				<%= image_tag 'procura.svg', class: 'responsive-img' %>
+			</div>
+			<div class="col s12 m8 animated" id="about05">
+				<h3>Para quem tem fome!</h3>
+				<p>
+					Para quem quer comer e não sabe aonde, Marmiteco é a solução!  <br>
+					Utilizamos um sistema de Geolocalização, para encontrar os melhores restaurantes sempre pertinho de você! <br>
+					Se estiver em nosso site, basta preencher o endereço e encontrará lugares próximos a você, sempre com uma comida fresquinha! <br>
+					Para uma experiência completa, utilize nosso aplicativo! Nele além dos melhores restaurantes, você terá acesos ao menu da semana, endereço e muito mais! Tudo com o recurso de Geolocalização, então, não importa onde você esteja, sempre encontrará comida por perto!
+				</p>
+			</div>	
+		</div>
+
+		<hr>
+	
+
+	<div class="row" id="price">
+		<div class="col s12 m5 animated" id="about06">
+			<p>Para aproveitar todos os benefícios de marketing e indicação oferecido pelo Marmiteco, você empresário da alimentação pagará apenas uma mensalidade de $35,00. </p>
+			<p>Não temos obrigação nem contrato! QUando não quiser mais fazer parte, basta não realizar o pagamento. Quando estiver insteresse em voltar, faça login, realize o pagamento e pronto! Tudo disponível por mais um mês!</p>
+			<p>Esse pagamento é realizado no próprio site através de cartão de crédito. Uma vez aprovado o pagamento pela operadora, tudo já estará a disposição! Basta preencher os cadastros com as informações do seu negócio e estará disponível no aplicativo no mesmo instante para ser encontrado! </p>
+		</div>
+
+		<div class="col s12 m7 animated" id="about07">
+	    <h2 class="header">Quanto isso custa?</h2>
+	    <div class="card horizontal">
+	      <div class="card-image">
+	        <%= image_tag 'chefe.png', class: 'responsive-img my-chef' %>
+	      </div>
+	      <div class="card-stacked">
+	        <div class="card-content">
+	          <h5>Para fazer parte dessa ideia, você paga apenas $35,00 por mês!</h5>
+	        </div>
+	        <div class="card-action">
+	          <%= link_to 'Faça parte!', new_user_path, class: 'btn btn-primary btn-block' %>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+</div>
+
+	<%= render 'footer' %>

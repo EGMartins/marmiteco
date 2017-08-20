@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'about/index'
+
   post 'notification', to: 'notification#create'
 
   get 'order/new'
