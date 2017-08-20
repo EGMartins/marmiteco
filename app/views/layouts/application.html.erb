@@ -33,29 +33,18 @@
     </ul>
     <a href="#" data-activates="slide-out" class="button-collapse hide-on-med-and-up"><i class="material-icons">menu</i></a>
         
-
-
-
-    <ul id="dropdown1" class="dropdown-content">
-      <% if session[:id].present? %>
-        <li><%= link_to('Sair', session_path(1), method: :delete) %></li>
-      <% else %>
-        <li><%= link_to 'Entrar', new_session_path %></li>
-        <li><%= link_to 'Cadastrar', new_user_path %></li>
-      <% end %>
-    </ul>
-
     <nav>
        <div class="nav-wrapper">
          <%= link_to (image_tag 'small_logo.png'), root_path, { :"data-turbolinks" => false, class: "brand-logo" } %>
          <ul id="nav-mobile" class="right hide-on-med-and-down">
            <% if session[:id].present? %>
               <li><h4>Olá, <%= current_user.name %>!</h4></li>
-              <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Usuário<i class="material-icons right">arrow_drop_down</i></a></li>
+              <li><li><%= link_to('Sair', session_path(1), method: :delete) %></li></li>
           <% else %>
-              <li><%= link_to 'Home', root_path, :"data-turbolinks" => false %></li>
-              <li><%= link_to 'Sobre', '#' %></li>
-              <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Usuário<i class="material-icons right">arrow_drop_down</i></a></li>
+              <li><%= link_to 'Marmiteco', root_path, :"data-turbolinks" => false %></li>
+              <li><%= link_to 'Como funciona?', '#' %></li>
+              <li><%= link_to 'Entrar', new_session_path %></li>
+              <li><%= link_to 'Cadastrar', new_user_path %></li>
            <% end %>
          </ul>
        </div>
