@@ -48,7 +48,8 @@ gem 'underscore-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem "pagseguro-oficial", "~> 2.5.0"
+# gem "pagseguro-oficial", "~> 2.5.0"
+gem "pagseguro-oficial", :path => "gem/ruby"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger
