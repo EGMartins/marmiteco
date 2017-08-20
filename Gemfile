@@ -49,7 +49,7 @@ gem 'underscore-rails'
 # gem 'capistrano-rails', group: :development
 
 # gem "pagseguro-oficial", "~> 2.5.0"
-gem "pagseguro-oficial", :path => "gem/ruby"
+gem "pagseguro-oficial"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger
