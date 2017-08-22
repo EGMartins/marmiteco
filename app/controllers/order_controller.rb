@@ -14,7 +14,7 @@ class OrderController < ApplicationController
 
     payment = PagSeguro::CreditCardTransactionRequest.new
     payment.notification_url = "https://safe-dusk-38202.herokuapp.com/notification"
-    payment.payment_mode = "creditCard"
+    payment.payment_mode = "default"
 
     # Aqui vão os itens que serão cobrados na transação, caso você tenha multiplos itens
     # em um carrinho altere aqui para incluir sua lista de itens
