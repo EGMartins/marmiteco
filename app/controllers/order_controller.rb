@@ -16,6 +16,14 @@ class OrderController < ApplicationController
     payment.notification_url = "https://safe-dusk-38202.herokuapp.com/notification"
     payment.payment_mode = "default"
 
+
+    ## Adicionando endereço do comprador
+    address = PagSeguro::Address.new(postal_code: params[:zipcode], street: params[:street], number: params[:number], complement: '', district: params[:district], city: params[:city], state: params[:state])
+    shipping = PagSeguro::Shipping.new
+    shipping.address = address
+    payment.shipping = shipping
+    payment.billing_address = address
+
     # Aqui vão os itens que serão cobrados na transação, caso você tenha multiplos itens
     # em um carrinho altere aqui para incluir sua lista de itens
     payment.items << {
@@ -25,13 +33,33 @@ class OrderController < ApplicationController
       weight: 0
     }
 
+    # Aqui vão os dados de entrega
+    # payment.billing_address = {
+    #   type_name: "",
+    #   cost: 0.00,
+    #   address: {
+    #     street: params[:street],
+    #     number: params[:number],
+    #     complement: "",
+    #     district: params[:district],
+    #     city: params[:city],
+    #     state: params[:state],
+    #     postal_code: params[:zipcode]
+    #   }
+    # }
+
     # Criando uma referencia para a nossa ORDER
     reference = "REF_#{(0...8).map { (65 + rand(26)).chr }.join}_#{@product.id}"
     payment.reference = reference
     payment.sender = {
       hash: params[:sender_hash],
       name: params[:name],
-      email: params[:email]
+      email: params[:email],
+      cpf: params[:cpf],
+      phone: {
+       area_code: params[:phone_code],
+       number: params[:phone_number]
+     }
     }
 
     payment.credit_card_token = params[:card_token]
