@@ -4,6 +4,6 @@ PagSeguro.configure do |config|
 	# Production
 	config.token = "BE23540ADB144CEF8B6432C766D5A701"
 	config.email = "mirassol.code@gmail.com"
-	config.environment = :sandbox # ou :sandbox. O padrão é production.
+	config.environment = :production # ou :sandbox. O padrão é production.
 	config.encoding = "UTF-8"
 end
