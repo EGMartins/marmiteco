@@ -3,6 +3,8 @@ class OrderController < ApplicationController
 
   # Gerar um Token de sessão para nosso pagamento
   def new
+    raise NotAuthenticated, 'Faça o Login primeiro!' if session[:id].blank?
+
     @product = Product.find(params[:product_id])
     session = PagSeguro::Session.create
     @session_id = session.id

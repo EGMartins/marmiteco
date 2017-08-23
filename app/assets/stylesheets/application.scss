@@ -21,6 +21,7 @@
  @import "home";
  @import "users";
  @import "about";
+ @import "toastr";
 
  body {
    background-color: #fff3e0;
@@ -30,5 +31,21 @@
 	img {
 		width: 200px;	
 		margin-top: 10px;
+	}
+}
+
+#notice-wrapper {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 999;
+	background: rgba( 44, 187, 173, 0.85 );
+	p {
+		padding: 2.5rem 0;
+		text-align: center;
+		font-size: 1.25rem;
+		font-weight: 700;
+		color: #fff;
+		letter-spacing: 1px;
 	}
 }

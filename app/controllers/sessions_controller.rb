@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
     end
     session[:id] = user.id
     session[:name] = user.name
-    flash[:notice] = "Olá, #{user.name}!"
+    flash[:notice] = "Olá #{user.name}, seja bem-vindo!"
     redirect_to users_path
   end
 

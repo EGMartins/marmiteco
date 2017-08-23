@@ -12,7 +12,11 @@
   </head>
 
   <body>
-
+  <% if notice %>
+    <div id="notice-wrapper">
+      <p class='notice'><%= notice %></p>
+    </div>
+  <% end %>
   
     <ul id="slide-out" class="side-nav">
       <li><div class="user-view">
@@ -53,5 +57,7 @@
      </nav>
      <br>
     <%= yield %>
+
+
   </body>
 </html>
