@@ -1,0 +1,41 @@
+
+<div class="col offset-m2 m8 s12">
+    <div class="demo-container">
+        <div class="row">
+            <div class="col m6 s12">
+                <div class="card-wrapper"></div>
+            </div>
+            <div class="col m6 s12">
+                <div class="form-container active">
+                    <form action="">
+                        <input placeholder="Número do Cartão" type="text" name="card-number" id="card-number">
+                        <input placeholder="Nome do Cartão" type="text" name="card_name" id="card-name">
+                        <input placeholder="MES" type="tel" name="card-month" id="card-month">
+                        <input placeholder="ANO" type="tel" name="card-year" id="card-year">
+                        <input placeholder="CVC" type="number" name="card-cvv", id="card-cvv">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+    <script>
+        new Card({
+            form: document.querySelector('form'),
+            container: '.card-wrapper',
+            numberInput: '#card-number',
+            expiryInput: '#card-month, #card-year',
+            cvcInput: '#card-cvv',
+            nameInput: '#card-name',
+
+            placeholders: {
+                number: '**** **** **** ****',
+                name: 'Tony Stark',
+                expiry: '**/****',
+                cvc: '***'
+            }
+            
+        });
+    </script>
