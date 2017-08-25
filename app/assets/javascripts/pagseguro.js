@@ -54,9 +54,11 @@ function card_flag()
      $("#card-flag").html(response['brand']['name']);
      $("#card-flag").show();
      //Mostra as opções de parcelamento (passando o preço e a bandeira)
-     showPaymentOptions(response['brand']['name'], $("#price").val());
-     $("#card-options-box").show();
+     
+     // showPaymentOptions(response['brand']['name'], $("#price").val());
+     // $("#card-options-box").show();
      //Mostra o campo CVV se o cartão exigir
+     
      if(response['brand']['cvvSize'] > 0){$("#card-cvv-box").show();}
    },
    error: function (response) {
@@ -79,7 +81,7 @@ function getCardToken(card_number, cvv, month, year){
     expirationMonth: month,
     expirationYear: year,
     success: function (response) {
-      console.log(response);
+      console.log('Card Token: '+response);
     },
     error: function (response) {
       console.log(response);
