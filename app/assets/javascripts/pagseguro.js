@@ -17,13 +17,13 @@ $( document ).ready(function() {
      success: function (response) {
        //token gerado, esse deve ser usado na chamada da API do Checkout Transparente
        $('#card_token').val(response['card']['token']);
-       console.log(response['card']['token']);
+       // console.log(response['card']['token']);
        $('#payment-datas').hide();
        $('#finish-buy').fadeIn();
      },
      error: function (response) {
-       alert('As informações sobre o cartão estão incorretas '+response+'OK');
-       console.log(response);
+       alert('As informações sobre o cartão estão incorretas ');
+       // console.log(response);
      }
     }
 
@@ -49,7 +49,7 @@ function card_flag()
   PagSeguroDirectPayment.getBrand({
    cardBin: $("#card-number").val().replace(/\s/g, ''),
    success: function (response) {
-     console.log(response);
+     // console.log(response);
      //Coloca qual a bandeira ao lado do numero
      $("#card-flag").html(response['brand']['name']);
      $("#card-flag").show();
@@ -81,10 +81,10 @@ function getCardToken(card_number, cvv, month, year){
     expirationMonth: month,
     expirationYear: year,
     success: function (response) {
-      console.log('Card Token: '+response);
+      // console.log('Card Token: '+response);
     },
     error: function (response) {
-      console.log(response);
+      // console.log(response);
     }
   }
 
@@ -107,7 +107,7 @@ function showPaymentOptions(flag, price)
      });
    },
    error: function (response) {
-     console.log(response);
+     // console.log(response);
    },
    complete: function (response) {
      //tratamento comum para todas chamadas
