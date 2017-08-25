@@ -29,3 +29,13 @@
     </div>
 </div>
 
+<script>
+  $( document ).ready(function() {
+    setTimeout(function() {
+      $('#notice-wrapper').fadeOut("slow", function() {
+        $(this).remove();
+      })
+    }, 3000);
+  });
+</script>
+
