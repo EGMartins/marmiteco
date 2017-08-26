@@ -88,13 +88,17 @@ class OrderController < ApplicationController
     payment.create
 
     # Cria uma Order para registro das transações
-    Order.create(product_id: @product.id, buyer_name: params[:name], reference: reference, status: 'pending')
+    Order.create(product_id: @product.id, buyer_name: params[:name], reference: reference, status: 'Pendente')
 
     if payment.errors.any?
      puts "=> ERRORS"
      puts payment.errors.join("\n")
      render plain: "Erro No Pagamento #{payment.errors.join("\n")}"
     else
+      @order = Order.last
+      @order.user = current_user
+      @order.save!
+
       redirect_to order_index_path
     #  puts "=> Transaction"
     #  puts "  code: #{payment.code}"

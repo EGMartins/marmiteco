@@ -2,21 +2,21 @@ class HomeController < ApplicationController
 
   def map
     if params[:search].present?
-      @businesses = Business.near(params[:search], 2, units: :km)
+      @result = Business.near(params[:search], 3, units: :km)
+      @businesses = @result.where('active = ?', true)
       # render :json => @businesses
     else
       # @businesses = Business.near('Praça da Matriz, Mirassol', 2, units: :km)
       redirect_to root_path
     end
+    
     @hash = Gmaps4rails.build_markers(@businesses) do |business, marker|
       marker.lat business.latitude
       marker.lng business.longitude
       marker.picture({ url: ActionController::Base.helpers.asset_path("restaurant.png"), width: 32, height: 32 })
       marker.title gmaps4rails_title(business.business_name)
-      marker.infowindow gmaps4rails_infowindow(business)
-      # marker.infowindow "#{business.business_name} \n #{business.business_info}"
+      marker.infowindow gmaps4rails_infowindow(business)  
     end
-
   end
 
   def json_map

@@ -9,6 +9,11 @@ class NotificationController < ApplicationController
     if transaction.errors.empty?
       order = Order.where(reference: transaction.reference).last
       order.status = status[transaction.status.id.to_i - 1]
+      if transaction.status.id = '3'
+        order.user.business.active = true
+        order.user.business.save
+        order.end_date = 30.days.from_now
+      end
       order.save
     end
 
