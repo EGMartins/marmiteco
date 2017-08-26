@@ -44,6 +44,7 @@
          <%= link_to (image_tag 'small_logo.png'), root_path, { :"data-turbolinks" => false, class: "brand-logo" } %>
          <ul id="nav-mobile" class="right hide-on-med-and-down">
            <% if session[:id].present? %>
+              <li><%= link_to 'Dashboard', users_path %></li>
               <li><h4>Olá, <%= current_user.name %>!</h4></li>
               <li><li><%= link_to('Sair', session_path(1), method: :delete) %></li></li>
           <% else %>
@@ -58,6 +59,15 @@
      <br>
     <%= yield %>
 
+    <script>
+      $( document ).ready(function() {
+          setTimeout(function() {
+            $('#notice-wrapper').fadeOut("slow", function() {
+              $(this).remove();
+            })
+          }, 3000);
+        });
+   </script>
 
   </body>
 </html>

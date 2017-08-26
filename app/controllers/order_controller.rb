@@ -96,7 +96,7 @@ class OrderController < ApplicationController
      render plain: "Erro No Pagamento #{payment.errors.join("\n")}"
     else
       @order = Order.last
-      @order.user = current_user
+      @order.user = User.find(session[:id])
       @order.save!
 
       redirect_to order_index_path

@@ -1,11 +1,14 @@
 
-<h4>Orders list:</h4>
+<div class="container">
+<h4>Seus pagamentos:</h4>
 <br />
 <% @orders.each do |order| %>
-  <p>Product Name: <%= order.product.title %></p>
-  <p>User: <%= order.buyer_name %></p>
-  <p>Status: <%= order.status %></p>
+  <p>Produto: <%= order.product.title %></p>
+  <p>Comprador: <%= order.buyer_name %></p>
+  <p>Condição: <%= order.status %></p>
   <hr />
 <% end %>
 
-<a href="/products">Produtos</a>
+
+
+</div>
