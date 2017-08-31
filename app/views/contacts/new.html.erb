@@ -1,6 +1,33 @@
 <div class="container">
-  <h3>Dados de contato:</h3>
-  <br><br>
+
+<h3 class="center" style="color:#2bbbad">Seja muito bem-vindo!</h3>
+
+  <div class="row">
+    <div class="col s12 m12">
+      <br>
+      <br>
+      <br>
+      <div class="card">
+        <div class="card-image">
+          <%= image_tag 'bg03.jpg' %>
+          <span class="card-title" style="background-color: rgba(251, 140, 0, 0.65)">É um prazer enorme ter você aqui!</span>
+        </div>
+        <div class="card-content">
+          <p>Ficamos muito felizes que você esteja interessado em fazer parte do Marmiteco!</p>
+          <p>O Marmiteco surgiu da necessidade de pequenos e médios restaurantes ou até mesmo casas que servem comida em serem encontrados. A idéia é fornecer ao público um aplicativo com geolocalização, onde ele poderá ver ao seu redor, onde ele pode encontrar comida.</p>
+          <p>Para que nosso projeto tenho o sucesso esperado, sua participação é de extrema importância! Pois sem restaurantes e fornecedores de comida em geral, não há o que encontrar!</p>
+          <p>Tenho certeza que formaremos um excelente time!</p>
+          <h5>Muito sucesso!!</h5>
+          <p>Obrigado! <br>
+              <em>Equipe Marmiteco</em>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+<hr>
+  <h4>Dados de contato:</h4>
+  <br>
   <%= simple_form_for @contact, :html => {:class => 'form-horizontal' } do |f| %>
     <div class="input-field">
       <%= f.input :name,label: 'Seu Nome',  :required => true %>
@@ -12,10 +39,14 @@
     <%= f.input :phone, label: 'Seu telefone', :required => true %>
     </div>
     <div class="hidden">
-      <%= f.input :nickname, :hint => 'Leave this field blank!' %>
+      <%= f.input :nickname %>
     </div>
+    <br>
     <div class="form-actions">
       <%= f.button :submit, 'Enviar!', :class=> "btn btn-primary" %>
     </div>
+    <br>
   <% end %>
 </div>
+
+<%= render 'welcome_footer' %>
