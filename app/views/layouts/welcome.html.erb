@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Marmiteco</title>
+    <%= Gon::Base.render_data %>
+    <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+
+  </head>
+
+  <body>
+  <% if notice %>
+    <div id="notice-wrapper">
+      <p class='notice'><%= notice %></p>
+    </div>
+  <% end %>
+  
+    <ul id="slide-out" class="side-nav">
+      <li>Bem-vindo! <br> Logo entraremos em contato!</li>
+
+<!--       <li><div class="user-view">
+        <div class="background">
+          <%= link_to (image_tag 'small_logo.png'),'#' , class: 'side-logo' %>
+        </div>
+          
+          
+      </div></li>
+      <% if session[:id].present? %>
+        <li><%= link_to('Sair', session_path(1), method: :delete) %></li>
+      <% else %>
+        <li><%= link_to 'Entrar', new_session_path %></li>
+        <li><div class="divider"></div></li>
+        <li><%= link_to 'Cadastrar', new_user_path %></li>
+        <li><div class="divider"></div></li>
+        <li><%= link_to 'Como Funciona?', about_index_path %></li>
+      <% end %> -->
+
+    </ul>
+    <a href="#" data-activates="slide-out" class="button-collapse hide-on-med-and-up"><i class="material-icons">menu</i></a>
+        
+    <nav>
+       <div class="nav-wrapper">
+         <%= link_to (image_tag 'small_logo.png'), root_path, { :"data-turbolinks" => false, class: "brand-logo" } %>
+         <!-- <ul id="nav-mobile" class="right hide-on-med-and-down">
+           <% if session[:id].present? %>
+              <li><%= link_to 'Dashboard', users_path %></li>
+              <li><h4>Olá, <%= current_user.name %>!</h4></li>
+              <li><li><%= link_to('Sair', session_path(1), method: :delete) %></li></li>
+          <% else %>
+              <li><%= link_to 'Marmiteco', root_path, :"data-turbolinks" => false %></li>
+              <li><%= link_to 'Como funciona?', about_index_path, :"data-turbolinks" => false %></li>
+              <li><%= link_to 'Entrar', new_session_path %></li>
+              <li><%= link_to 'Cadastrar', new_user_path %></li>
+           <% end %>
+         </ul> -->
+       </div>
+     </nav>
+     <br>
+    <%= yield %>
+
+    <script>
+      $( document ).ready(function() {
+          setTimeout(function() {
+            $('#notice-wrapper').fadeOut("slow", function() {
+              $(this).remove();
+            })
+          }, 3000);
+        });
+   </script>
+
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<div class="container">
+  <h3>Dados de contato:</h3>
+  <br><br>
+  <%= simple_form_for @contact, :html => {:class => 'form-horizontal' } do |f| %>
+    <div class="input-field">
+      <%= f.input :name,label: 'Seu Nome',  :required => true %>
+    </div>
+    <div class="input-field">
+    <%= f.input :email, label: 'Seu e-mail', :required => true %>
+    </div>
+    <div class="input-field">
+    <%= f.input :phone, label: 'Seu telefone', :required => true %>
+    </div>
+    <div class="hidden">
+      <%= f.input :nickname, :hint => 'Leave this field blank!' %>
+    </div>
+    <div class="form-actions">
+      <%= f.button :submit, 'Enviar!', :class=> "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
