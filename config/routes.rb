@@ -4,7 +4,6 @@ Rails.application.routes.draw do
 
   resources "contacts", only: [:new, :create]
 
-  root 'contacts#new'
   post 'notification', to: 'notification#create'
 
   get 'order/new'
@@ -15,7 +14,10 @@ Rails.application.routes.draw do
 
   resources :products
   resources :businesses
-  # root 'home#home'
+  
+  root 'home#home'
+  # root 'contacts#new'
+
   get 'map' => 'home#map', as: 'map'
   get 'json-map' => 'home#json_map', as: 'json-map'
 

@@ -1,7 +1,7 @@
 <div class="container card-wrapper">
 
   <div class="row">
-    <div class="col s12 m4">
+    <div class="col s12 m3">
       <div class="card">
         <div class="card-image">
           <%= image_tag("profile_icon.svg", :alt => "Meu perfil") %>
@@ -17,7 +17,7 @@
       </div>
     </div>
 
-    <div class="col s12 m4">
+    <div class="col s12 m3">
       <div class="card">
         <div class="card-image">
           <%= image_tag("business_icon.svg", :alt => "Meu negocio") %>
@@ -25,19 +25,19 @@
         </div>
         <div class="card-content">
           <p>Aqui é onde você vai criar ou editar seu negócio! Esta parte merece uma atenção toda especial,
-            pois os dados auqi informados serão exibidos pelo Aplicativo!</p>
+            pois os dados auqi informados serão exibidos pelo Aplicativo! Capriche!</p>
         </div>
         <div class="card-action">
           <% if current_user.business.present? %>
-            <%= link_to 'Editar Meu Negócio', edit_business_path(current_user.business.id), class: 'btn btn-primary' %>
+            <%= link_to 'Meu Negócio', edit_business_path(current_user.business.id), class: 'btn btn-primary' %>
           <% else %>
-            <%= link_to'Criar Meu Negócio', new_business_path, class: 'btn btn-primary' %>
+            <%= link_to 'Meu Negócio', new_business_path, class: 'btn btn-primary' %>
           <% end %>
         </div>
       </div>
     </div>
   
-    <div class="col s12 m4">
+    <div class="col s12 m3">
       <div class="card">
         <div class="card-image">
           <%= image_tag("profile_icon.svg", :alt => "Meu perfil") %>
@@ -47,7 +47,22 @@
           <p>Aqui é onde você realiza pagamentos e controle os pagamentos já realizados! Quando o pagamento estiver vencendo, você é notificado por e-mail ou mensagem!</p>
         </div>
         <div class="card-action">
-          <%= link_to 'Comprar Produto', order_new_path(product_id: '1'), class: 'btn btn-primary' %>
+          <%= link_to 'Pagamento', order_new_path(product_id: '1'), class: 'btn btn-primary' %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col s12 m3">
+      <div class="card">
+        <div class="card-image">
+          <%= image_tag("profile_icon.svg", :alt => "Meu perfil") %>
+          <span class="card-title">Ordens</span>
+        </div>
+        <div class="card-content">
+          <p>Aqui é onde você encontra o histórico de suas compras. Todas as suas ordens de compra ficam aqui, com data de criação, data de vencimento e status do seu negócio!</p>
+        </div>
+        <div class="card-action">
+          <%= link_to 'Ordens', order_index_path, class: 'btn btn-primary' %>
         </div>
       </div>
     </div>

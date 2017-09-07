@@ -1,5 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+  include ApplicationHelper
+  helper_method :current_user
+  
   NotAuthenticated = Class.new(StandardError)
   rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
   rescue_from NotAuthenticated, with: :not_authenticated

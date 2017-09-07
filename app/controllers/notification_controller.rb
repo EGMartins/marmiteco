@@ -13,6 +13,7 @@ class NotificationController < ApplicationController
         order.user.business.active = true
         order.user.business.save
         order.end_date = 30.days.from_now
+        order.save
       end
       order.save
     end

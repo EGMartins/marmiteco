@@ -1,13 +1,21 @@
 
 <div class="container">
-<h4>Seus pagamentos:</h4>
+<h4>Suas ordens de compra:</h4>
 <br />
 <% @orders.each do |order| %>
+	<h4>Ordem número: <%= order.id %></h4>
+	<p>Criada em: <%= order.created_at.strftime("%d-%m-%Y") %></p>
+	<% if order.end_date.present? %>
+		<p>Valida até: <%= order.end_date.strftime("%d-%m-%Y") %></p>
+	<% end %>
+  <p>Status: <%= current_user.business.active ? 'Ativo' : 'Inativo' %></p>
   <p>Produto: <%= order.product.title %></p>
   <p>Comprador: <%= order.buyer_name %></p>
   <p>Condição: <%= order.status %></p>
   <hr />
 <% end %>
+
+<%= link_to 'Voltar', users_path, class: 'btn btn-primary btn-large' %>
 
 
 
