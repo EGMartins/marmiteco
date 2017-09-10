@@ -24,18 +24,21 @@ class BusinessesController < ApplicationController
     flash[:notice] = 'Seu negócio foi criado!' if @business.save
     @user.business = @business
     @user.save
-    respond_with @business
+    redirect to users_path
+    # respond_with @business
   end
 
   def update
     flash[:notice] = 'Negócio atualizado' if @business.update(business_params)
-    respond_with @business
+    redirect_to users_path
+    # respond_with @business
   end
 
   def destroy
     @business.destroy
     flash[:notice] = 'Negócio apagado!' if @business.destroy
-    respond_with @business
+    redirect_to users_path
+    # respond_with @business
   end
 
   private
