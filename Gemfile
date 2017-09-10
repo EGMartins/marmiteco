@@ -52,7 +52,10 @@ gem 'underscore-rails'
 # gem 'capistrano-rails', group: :development
 
 # gem "pagseguro-oficial", "~> 2.5.0"
-gem "pagseguro-oficial"
+# gem "pagseguro-oficial"
+gem 'pagseguro-transparente'
+
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger
@@ -60,6 +63,8 @@ group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
   gem 'byebug', platform: :mri
+  gem 'pry'
+  gem 'pry-stack_explorer'
 end
 
 group :development do

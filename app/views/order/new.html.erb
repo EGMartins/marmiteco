@@ -1,4 +1,4 @@
-<script type="text/javascript" src="https://stc.pagseguro.uol.com.br/pagseguro/api/v2/checkout/pagseguro.directpayment.js"></script>
+<!-- <script type="text/javascript" src="https://stc.pagseguro.uol.com.br/pagseguro/api/v2/checkout/pagseguro.directpayment.js"></script> -->
 
 
 <div class="container">
@@ -11,6 +11,7 @@
    </p>
    <p>Preço: $<%= "%.2f" % @product.price.truncate(2) %></p>
    <p>Descrição: <%= @product.description %></p>
+   <em><%= @session_id %></em>
    <input id='price' type="hidden" value="210">
    <div id="payment_datas">
    <form class="form-horizontal" role="form" action="/order/create" method="POST">

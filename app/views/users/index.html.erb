@@ -47,7 +47,7 @@
           <p>Aqui é onde você realiza pagamentos e controle os pagamentos já realizados! Quando o pagamento estiver vencendo, você é notificado por e-mail ou mensagem!</p>
         </div>
         <div class="card-action">
-          <%= link_to 'Pagamento', order_new_path(product_id: '1'), class: 'btn btn-primary' %>
+          <%= link_to 'Pagamento', order_new_path(product_id: '1'), :"data-turbolinks" => false, class: 'btn btn-primary' %>
         </div>
       </div>
     </div>

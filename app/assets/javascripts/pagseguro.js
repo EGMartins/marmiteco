@@ -46,29 +46,29 @@ $( document ).ready(function() {
 
 function card_flag()
 {
-  PagSeguroDirectPayment.getBrand({
-   cardBin: $("#card-number").val().replace(/\s/g, ''),
-   success: function (response) {
-     // console.log(response);
-     //Coloca qual a bandeira ao lado do numero
-     $("#card-flag").html(response['brand']['name']);
-     $("#card-flag").show();
-     //Mostra as opções de parcelamento (passando o preço e a bandeira)
+  // PagSeguroDirectPayment.getBrand({
+  //  cardBin: $("#card-number").val().replace(/\s/g, ''),
+  //  success: function (response) {
+  //    // console.log(response);
+  //    //Coloca qual a bandeira ao lado do numero
+  //    $("#card-flag").html(response['brand']['name']);
+  //    $("#card-flag").show();
+  //    //Mostra as opções de parcelamento (passando o preço e a bandeira)
      
-     // showPaymentOptions(response['brand']['name'], $("#price").val());
-     // $("#card-options-box").show();
-     //Mostra o campo CVV se o cartão exigir
+  //    // showPaymentOptions(response['brand']['name'], $("#price").val());
+  //    // $("#card-options-box").show();
+  //    //Mostra o campo CVV se o cartão exigir
      
-     if(response['brand']['cvvSize'] > 0){$("#card-cvv-box").show();}
-   },
-   error: function (response) {
-     console.log($("#card-number").val().replace(/\s/g, ''));
-     console.log(response);
-     $("#card-flag").hide();
-     $("#card-cvv-box").hide();
-     $("#card-options-box").hide();
-   }
-  });
+  //    if(response['brand']['cvvSize'] > 0){$("#card-cvv-box").show();}
+  //  },
+  //  error: function (response) {
+  //    console.log($("#card-number").val().replace(/\s/g, ''));
+  //    console.log(response);
+  //    $("#card-flag").hide();
+  //    $("#card-cvv-box").hide();
+  //    $("#card-options-box").hide();
+  //  }
+  // });
 }
 
 //Função para pegar o token do cartão de crédito que será usado no checkout
@@ -92,25 +92,25 @@ function getCardToken(card_number, cvv, month, year){
 }
 
 // Função para mostrar opções de pagamento para o usuário
-function showPaymentOptions(flag, price)
-{
-  PagSeguroDirectPayment.getInstallments({
-   amount: price,
-   brand: flag,
-   success: function (response) {
-     $("#card-options").html("");
-     $.each( response['installments'][flag], function( index, value ){
-       $("#card-options")
-       .append($("<option></option>")
-                  .attr("value",value['quantity'])
-                  .text("$"+value['installmentAmount']+" x "+value['quantity']+" - total: $"+value['totalAmount']));
-     });
-   },
-   error: function (response) {
-     // console.log(response);
-   },
-   complete: function (response) {
-     //tratamento comum para todas chamadas
-   }
- });
-}
+// function showPaymentOptions(flag, price)
+// {
+//   PagSeguroDirectPayment.getInstallments({
+//    amount: price,
+//    brand: flag,
+//    success: function (response) {
+//      $("#card-options").html("");
+//      $.each( response['installments'][flag], function( index, value ){
+//        $("#card-options")
+//        .append($("<option></option>")
+//                   .attr("value",value['quantity'])
+//                   .text("$"+value['installmentAmount']+" x "+value['quantity']+" - total: $"+value['totalAmount']));
+//      });
+//    },
+//    error: function (response) {
+//      // console.log(response);
+//    },
+//    complete: function (response) {
+//      //tratamento comum para todas chamadas
+//    }
+//  });
+// }
