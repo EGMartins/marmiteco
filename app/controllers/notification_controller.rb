@@ -4,7 +4,7 @@ class NotificationController < LoggedController
   
   def create
     # transaction = PagSeguro::Transaction.find_by_notification_code(params[:notificationCode])
-    transaction = PagSeguro::Notification.new(notification_code, 'transaction').transaction
+    transaction = PagSeguro::Notification.new(notificationCode, 'transaction').transaction
     mystatus = ['Aguardando Pagamento', 'Em análise', 'Paga', 'Disponível', 'Em disputa', 'Devolvida', 'Cancelada']
 
     if transaction.errors.empty?
