@@ -44,6 +44,14 @@
          <%= link_to (image_tag 'small_logo.png'), root_path, { :"data-turbolinks" => false, class: "brand-logo" } %>
          <ul id="nav-mobile" class="right hide-on-med-and-down">
            <% if session[:id].present? %>
+              <% if current_user.orders.last.end_date > Date.today + 10.days %>
+                <li class="light_green"> </li>
+              <% elsif current_user.orders.last.end_date < Date.today + 10.days && current_user.orders.last.end_date >= Date.today %>
+                <li class="light_yellow"> </li>
+              <% elsif current_user.orders.last.end_date < Date.today %>
+                <li class="light_red"> </li>
+              <% end %>
+              
               <li><%= link_to 'Dashboard', users_path %></li>
               <li><h4>Olá, <%= current_user.name %>!</h4></li>
               <li><li><%= link_to('Sair', session_path(1), method: :delete) %></li></li>
