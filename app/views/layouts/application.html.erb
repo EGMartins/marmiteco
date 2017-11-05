@@ -49,6 +49,8 @@
               <% elsif current_user.orders.last.end_date < Date.today + 10.days && current_user.orders.last.end_date >= Date.today %>
                 <li class="light_yellow"> </li>
               <% elsif current_user.orders.last.end_date < Date.today %>
+                <%= current_user.business.active = false %>
+                <% current_user.business.save %>
                 <li class="light_red"> </li>
               <% end %>
               
